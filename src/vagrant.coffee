@@ -25,7 +25,8 @@ class exports.VagrantManager
                 console.log msg.red
             else
                 versionMatch = stdout.match /Vagrant ([\d\.]+)/
-                if not versionMatch? or versionMatch.length isnt 1
+
+                if not versionMatch?
                     msg = "Cannot correctly check the version using the " + \
                             "\"vagrant -v\" command. Please report an issue."
                     console.log msg.red
